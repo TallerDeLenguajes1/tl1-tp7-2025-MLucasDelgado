@@ -1,29 +1,37 @@
-# Gestión de Empleados – Proyecto en C#
+# Proyecto Calculadora y Sistema de Personal - C#
 
-Este proyecto consiste en una aplicación de consola desarrollada en C# que permite gestionar empleados, calcular sus salarios y determinar información relevante como antigüedad, años faltantes para la jubilación y más.
+## Descripción general
 
-## Funcionalidades principales
+Este repositorio contiene dos proyectos de consola desarrollados en C# con .NET, organizados en carpetas separadas:
 
-- Carga de datos de múltiples empleados.
-- Cálculo del salario según:
-  - Antigüedad.
-  - Cargo (Ingeniero, Especialista, etc.).
-  - Estado civil (si es casado, se adiciona un monto fijo).
-- Determinación del empleado más próximo a jubilarse.
-- Cálculo del monto total en salarios de todos los empleados.
+### 1. Calculadora
 
-## Lenguaje y herramientas
+- Proyecto de consola que implementa una clase `Calculadora` con métodos para realizar operaciones aritméticas básicas: sumar, restar, multiplicar, dividir.
+- La clase mantiene un valor interno (`dato`) que se modifica con cada operación.
+- Permite encadenar operaciones sobre el mismo resultado.
+- Incluye un método para limpiar el resultado (`Limpiar`).
+- Se creó una interfaz de consola sencilla que permite al usuario realizar operaciones hasta que ingrese el comando `salir`.
 
-- Lenguaje: C#
-- Entorno: .NET / Consola
+### 2. SisPersonal
+
+- Proyecto de consola para administrar información básica de empleados de una empresa.
+- Define una clase `Empleado` con atributos como nombre, apellido, fecha de nacimiento, estado civil, fecha de ingreso, sueldo básico y cargo.
+- Se utiliza un `enum` para los cargos: Auxiliar, Administrativo, Ingeniero, Especialista e Investigador.
+- Implementa métodos para calcular:
+  - Antigüedad en la empresa
+  - Edad
+  - Años faltantes para jubilarse (considerando 65 años como edad de jubilación)
+  - Salario total que incluye un adicional según antigüedad, cargo y estado civil.
+- Carga datos de 3 empleados en un arreglo.
+- Calcula el monto total a pagar en salarios.
+- Muestra el empleado que está más próximo a jubilarse, con toda su información relevante.
 
 ## Cómo ejecutar
 
-1. Cloná el repositorio.
-2. Abrí el proyecto en Visual Studio o VS Code.
-3. Ejecutá el programa desde el `Main`.
-
----
+1. Clonar el repositorio.
+2. Navegar a la carpeta `Calculadora` o `SisPersonal`.
+3. Ejecutar el comando `dotnet run` para cada proyecto.
+4. Seguir las instrucciones en consola para interactuar con cada programa.
 
 ## ⚠️ Aclaración sobre los commits
 
