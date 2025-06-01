@@ -6,7 +6,7 @@ namespace Personal
         AuxiliarAdministrativo,
         Ingeniero,
         Especialista,
-        Investigador    
+        Investigador
     }
 
     public class Empleado
@@ -62,7 +62,7 @@ namespace Personal
             set { cargo = value; }
         }
 
-        // METODOS
+        // METODOS PUNTO 2A
         public int AñosAntiguedad()
         {
             int antiguedad = DateTime.Today.Year - fechaIngreso.Year;
@@ -92,6 +92,40 @@ namespace Personal
             int añosRestantes = 65 - edadActual;
 
             return añosRestantes > 0 ? añosRestantes : 0;
+        }
+
+        // PUNTO 2B
+        public double ObtenerSalario()
+        {
+            double adicional = 0;
+            int antiguedad = AñosAntiguedad();
+            if (antiguedad < 20)
+            {
+                adicional = sueldoBasico * (0.01 * antiguedad);
+            }
+            else
+            {
+                adicional = sueldoBasico * (0.25);
+            }
+
+            switch (cargo)
+            {
+                case Cargos.Ingeniero:
+                case Cargos.Especialista:
+                    adicional = adicional * 1.50;
+                    break;
+                default:
+                    break;
+            }
+
+            if (estadoCivil == 'c')
+            {
+                adicional += 150000;
+            }
+            
+            double salario = sueldoBasico + adicional;
+
+            return salario;
         }
     }
 }
